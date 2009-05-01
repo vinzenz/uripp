@@ -68,7 +68,9 @@
                     </li>
                     <li>Upload <code>doc</code> directory's files as static html to this 
                         <a href="http://apps.sourceforge.net/trac/sourceforge/wiki/Project%20web">project's web</a>
-                        (what you are looking at :).
+                        (what you are looking at :).<br/>
+                        <code>> cd doc</code><br/>
+                        <code>> rsync -avP -e ssh * NAME,uripp@web.sourceforge.net:htdocs/</code><br/>
                     </li>
                 </ul>
             </li>
@@ -109,8 +111,16 @@
                         <code>> cd tools</code><br/>
                         <code>> doxygen uripp.dxy</code><br/>
                         <code>> cd ../..</code><br/>
-                        <code>> tar cvzf uripp-[version].tar.gz uripp-[version]</code><br/>
-                        <b>Follow installation instructions to test!!!</b>
+                        <code>> tar cvzf uripp-[NEW VERSION NUMBER].tar.gz uripp-[NEW VERSION NUMBER]</code><br/>
+                    </li>
+                    <li><b>FOLLOW Installation INSTRUCTIONS TO TEST!!!</b></li>
+                    <li>Upload tar file to SourceForge FSM
+                        (<a href="http://apps.sourceforge.net/trac/sourceforge/wiki/File%20management%20service">instructions</a>):<br/> 
+                        <code>> rsync -avP -e ssh uripp-[NEW VERSION NUMBER].tar.gz NAME@frs.sourceforge.net:uploads/</code><br/>
+                    </li>
+                    <li>Create new
+                        <a href="https://sourceforge.net/project/admin/editpackages.php?group_id=260914">SourceForge release</a>
+                        (<a href="http://apps.sourceforge.net/trac/sourceforge/wiki/Release%20files%20for%20download">instructions</a>).
                     </li>
                 </ol>
             </li>
