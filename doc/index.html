@@ -90,17 +90,26 @@
             </li>
             <li><b>Release New Version</b>
                 <ol>
-                    <li>Tag svn.</li>
-                    <li>Checkout source from svn repository into directory: uripp-[version].
-                        Note that the auto configure files are not in the repository.
+                    <li>Assign new version number. Note that we are using "x.y.z"
+                        format, e.g. "1.0.0". Think up a brief summary of the
+                        release (to use in svn message).
+                        <ol>
+                            <li><b>VERY IMPORTANT</b>: Edit <code>configure.ac</code> and change <code>AC_INIT</code>
+                                2nd param to new version number.</li>
+                            <li><code>> svn ci configure.ac</code><br/>
+                                <code>> svn copy -m '[RELEASE SUMMARY]' --username NAME https://uripp.svn.sourceforge.net/svnroot/uripp/trunk https://uripp.svn.sourceforge.net/svnroot/uripp/tags/[NEW VERSION NUMBER]</code><br/>
+                            </li>
+                        </ol>
                     </li>
-                    <li>In root directory:<br/>
+                    <li>Checkout clean source from svn repository (in /tmp, e.g.). 
+                        (Note that the auto configure files are not in the repository.)<br/>
+                        <code>> svn co --username NAME https://uripp.svn.sourceforge.net/svnroot/uripp/tags/[NEW VERSION NUMBER] uripp-[NEW VERSION NUMBER]</code><br/>
+                        <code>> cd uripp-[NEW VERSION NUMBER]</code><br/>
                         <code>> autoreconf --install --force</code><br/>
                         <code>> cd tools</code><br/>
                         <code>> doxygen uripp.dxy</code><br/>
                         <code>> cd ../..</code><br/>
                         <code>> tar cvzf uripp-[version].tar.gz uripp-[version]</code><br/>
-                        <code>> cd /tmp</code><br/>
                         <b>Follow installation instructions to test!!!</b>
                     </li>
                 </ol>
