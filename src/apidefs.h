@@ -19,8 +19,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-#ifndef apidefs_h
-#define apidefs_h
+#ifndef uripp_apidefs_h
+#define uripp_apidefs_h
 #ifdef _WIN32
 // Symbols to define for the preprocessor when compiling the code:
 //    URIPP_STATIC: to create static library
