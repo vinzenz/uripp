@@ -25,7 +25,7 @@ THE SOFTWARE.
 #include <string>
 #include <iostream>
 namespace uripp {
-    /* \brief IP v6 address.
+    /** \brief IP v6 address.
      *
      * Syntax: Note that leading 0's are not valid.
      * <pre>
