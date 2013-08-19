@@ -5,6 +5,7 @@ AC_PREREQ(2.59)
 AC_INIT([uripp], [1.0.0])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+AM_PROG_AR
 LT_INIT
 AC_PROG_LIBTOOL
 AC_CONFIG_MACRO_DIR([m4])
