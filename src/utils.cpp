@@ -38,6 +38,7 @@ namespace uripp {
     std::string convert(int v) {return stringstream_convert(v);}
     std::string convert(unsigned int v) {return stringstream_convert(v);}
     std::string convert(unsigned long int v) {return stringstream_convert(v);}
+    std::string convert(long int v) {return stringstream_convert(v);}
     std::string convert(long long int v) {return stringstream_convert(v);}
     std::string convert(unsigned long long int v) {return stringstream_convert(v);}
     std::string convert(double v) {return stringstream_convert(v);}
@@ -137,12 +138,6 @@ namespace uripp {
         v = t;
         return true;
     }
-#	ifndef _WIN32
-    std::string convert(ptrdiff_t v) {
-		if (sizeof(ptrdiff_t) == sizeof(unsigned int)) return convert((unsigned int)v);
-		return convert((unsigned long long int)v);
-    }
-#	endif
     bool convert(const std::string& s, double& v) {
         if (s.empty())
             return false;

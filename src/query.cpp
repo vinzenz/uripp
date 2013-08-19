@@ -21,6 +21,7 @@ THE SOFTWARE.
 */
 #include "query.h"
 #include "urisyn.h"
+#include <algorithm>
 #include <stdexcept>
 namespace uripp {
     const char query::PAIRS_SEP_CHAR = '&';
