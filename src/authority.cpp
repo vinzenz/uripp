@@ -29,8 +29,16 @@ namespace uripp {
     const char authority::IP_LITERAL_BEGIN_CHAR = '[';
     const char authority::IP_LITERAL_END_CHAR = ']';
     const char authority::PORT_SEPARATOR_CHAR = ':';
-    authority::authority() : port_(0) {}
-    authority::authority(const std::string& v) : port_(0) {
+    authority::authority()
+    : host_type_(authority::null)
+    , host_()
+    , port_(0)    
+    {}
+    authority::authority(const std::string& v)
+    : host_type_(authority::null)
+    , host_()
+    , port_(0)    
+    {
         std::string::const_iterator first = v.begin();
         if (!parse(first, v.end(), *this) || first != v.end())
             throw std::invalid_argument("invalid URI authority: \"" + v + "\"");
