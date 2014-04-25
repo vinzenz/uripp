@@ -78,6 +78,7 @@ namespace uripp {
     std::ostream& ipv6_address::write(std::ostream& os, bool compress) const {
         size_t zfirst;
         size_t zlast;
+	std::ios::fmtflags flags(os.flags());
         if (compress)
             zero_run(zfirst, zlast);
         else {
@@ -93,6 +94,7 @@ namespace uripp {
                 os << SEPARATOR_CHAR;
         if (zlast == 8)
             os << SEPARATOR_CHAR;
+	os.flags(flags);
         return os;
     }
     bool parse(std::string::const_iterator& first, std::string::const_iterator last, unsigned short& v) {
