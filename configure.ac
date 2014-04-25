@@ -4,6 +4,7 @@
 AC_PREREQ(2.59)
 AC_INIT([uripp], [1.0.0])
 AC_CONFIG_AUX_DIR([build-aux])
+m4_pattern_allow([AM_PROG_AR])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AM_PROG_AR
 LT_INIT
